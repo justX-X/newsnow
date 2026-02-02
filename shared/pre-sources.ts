@@ -326,6 +326,33 @@ export const originSources = {
     type: "realtime",
     home: "https://www.jin10.com",
   },
+  "tonghuashun": {
+    name: "同花顺财经",
+    color: "red",
+    column: "finance",
+    home: "https://news.10jqka.com.cn",
+    sub: {
+      quick: {
+        type: "realtime",
+        interval: Time.Fast,
+        title: "快讯",
+      },
+    },
+  },
+  "eastmoney": {
+    name: "东方财富",
+    color: "green",
+    column: "finance",
+    home: "https://kuaixun.eastmoney.com/",
+    sub: {
+      quick: {
+        type: "realtime",
+        interval: Time.Fast,
+        title: "快讯",
+      },
+    },
+  },
+
   "baidu": {
     name: "百度热搜",
     column: "china",
