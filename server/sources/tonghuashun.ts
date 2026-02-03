@@ -1,3 +1,6 @@
+import { Buffer } from "node:buffer"
+import iconv from "iconv-lite"
+
 interface TonghuashunItem {
   category: string
   clink: string
@@ -30,7 +33,11 @@ interface TonghuashunRes {
 const quick = defineSource(async () => {
   const url = "http://stock.10jqka.com.cn/thsgd/realtimenews.js"
 
-  const rawData: string = await myFetch(url)
+  const response: ArrayBuffer = await myFetch(url, {
+    responseType: "arrayBuffer",
+  })
+
+  const rawData = iconv.decode(Buffer.from(response), "gbk")
 
   const jsonMatch = rawData.match(/var\s+thsRss\s*=\s*(\{[\s\S]*?\});/)
   if (!jsonMatch) {
