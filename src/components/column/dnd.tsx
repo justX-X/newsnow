@@ -130,10 +130,15 @@ function DndWrapper({ items, setItems, isSingleColumn, children }: PropsWithChil
 }
 
 function CardOverlay({ id }: { id: SourceID }) {
+  const source = sources[id]
+  if (!source) {
+    return null
+  }
+
   return (
     <div className={$(
       "flex flex-col p-4 backdrop-blur-5",
-      `bg-${sources[id].color}-500 dark:bg-${sources[id].color} bg-op-40!`,
+      `bg-${source.color}-500 dark:bg-${source.color} bg-op-40!`,
       !isiOS() && "rounded-2xl",
     )}
     >
@@ -148,14 +153,14 @@ function CardOverlay({ id }: { id: SourceID }) {
           <span className="flex flex-col">
             <span className="flex items-center gap-2">
               <span className="text-xl font-bold">
-                {sources[id].name}
+                {source.name}
               </span>
-              {sources[id]?.title && <span className={$("text-sm", `color-${sources[id].color} bg-base op-80 bg-op-50! px-1 rounded`)}>{sources[id].title}</span>}
+              {source?.title && <span className={$("text-sm", `color-${source.color} bg-base op-80 bg-op-50! px-1 rounded`)}>{source.title}</span>}
             </span>
             <span className="text-xs op-70">拖拽中</span>
           </span>
         </div>
-        <div className={$("flex gap-2 text-lg", `color-${sources[id].color}`)}>
+        <div className={$("flex gap-2 text-lg", `color-${source.color}`)}>
           <button
             type="button"
             className={$("i-ph:dots-six-vertical-duotone", "cursor-grabbing")}

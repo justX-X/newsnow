@@ -29,6 +29,11 @@ export const CardWrapper = forwardRef<HTMLElement, ItemsProps>(({ id, isDragging
 
   useImperativeHandle(dndRef, () => ref.current! as HTMLDivElement)
 
+  const source = sources[id]
+  if (!source) {
+    return null
+  }
+
   return (
     <div
       ref={ref}
@@ -37,7 +42,7 @@ export const CardWrapper = forwardRef<HTMLElement, ItemsProps>(({ id, isDragging
         // "backdrop-blur-5",
         "transition-opacity-300",
         isDragging && "op-50",
-        `bg-${sources[id].color}-500 dark:bg-${sources[id].color} bg-op-40!`,
+        `bg-${source.color}-500 dark:bg-${source.color} bg-op-40!`,
       )}
       style={{
         transformOrigin: "50% 50%",
@@ -51,6 +56,11 @@ export const CardWrapper = forwardRef<HTMLElement, ItemsProps>(({ id, isDragging
 })
 
 function NewsCard({ id, setHandleRef }: NewsCardProps) {
+  const source = sources[id]
+  if (!source) {
+    return null
+  }
+
   const { refresh } = useRefetch()
   const { data, isFetching, isError } = useQuery({
     queryKey: ["source", id],
@@ -75,7 +85,7 @@ function NewsCard({ id, setHandleRef }: NewsCardProps) {
 
       function diff() {
         try {
-          if (response.items && sources[id].type === "hottest" && cacheSources.has(id)) {
+          if (response.items && source.type === "hottest" && cacheSources.has(id)) {
             response.items.forEach((item, i) => {
               const o = cacheSources.get(id)!.items.findIndex(k => k.id === item.id)
               item.extra = {
@@ -111,8 +121,8 @@ function NewsCard({ id, setHandleRef }: NewsCardProps) {
           <a
             className={$("w-8 h-8 rounded-full bg-cover")}
             target="_blank"
-            href={sources[id].home}
-            title={sources[id].desc}
+            href={source.home}
+            title={source.desc}
             style={{
               backgroundImage: `url(/icons/${id.split("-")[0]}.png)`,
             }}
@@ -121,16 +131,16 @@ function NewsCard({ id, setHandleRef }: NewsCardProps) {
             <span className="flex items-center gap-2">
               <span
                 className="text-xl font-bold"
-                title={sources[id].desc}
+                title={source.desc}
               >
-                {sources[id].name}
+                {source.name}
               </span>
-              {sources[id]?.title && <span className={$("text-sm", `color-${sources[id].color} bg-base op-80 bg-op-50! px-1 rounded`)}>{sources[id].title}</span>}
+              {source?.title && <span className={$("text-sm", `color-${source.color} bg-base op-80 bg-op-50! px-1 rounded`)}>{source.title}</span>}
             </span>
             <span className="text-xs op-70"><UpdatedTime isError={isError} updatedTime={data?.updatedTime} /></span>
           </span>
         </div>
-        <div className={$("flex gap-2 text-lg", `color-${sources[id].color}`)}>
+        <div className={$("flex gap-2 text-lg", `color-${source.color}`)}>
           <button
             type="button"
             className={$("btn i-ph:arrow-counter-clockwise-duotone", isFetching && "animate-spin i-ph:circle-dashed-duotone")}
@@ -155,7 +165,7 @@ function NewsCard({ id, setHandleRef }: NewsCardProps) {
         className={$([
           "h-full p-2 overflow-y-auto rounded-2xl bg-base bg-op-70!",
           isFetching && `animate-pulse`,
-          `sprinkle-${sources[id].color}`,
+          `sprinkle-${source.color}`,
         ])}
         options={{
           overflow: { x: "hidden" },
@@ -163,7 +173,7 @@ function NewsCard({ id, setHandleRef }: NewsCardProps) {
         defer
       >
         <div className={$("transition-opacity-500", isFetching && "op-20")}>
-          {!!data?.items?.length && (sources[id].type === "hottest" ? <NewsListHot items={data.items} /> : <NewsListTimeLine items={data.items} />)}
+          {!!data?.items?.length && (source.type === "hottest" ? <NewsListHot items={data.items} /> : <NewsListTimeLine items={data.items} />)}
         </div>
       </OverlayScrollbar>
     </>
