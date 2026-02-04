@@ -1,15 +1,11 @@
 const quick = defineSource(async () => {
   try {
-    // 使用新的 API 接口
-    const url = "https://np-anotice-stock.eastmoney.com/api/security/ann"
+    // 尝试使用东方财富新闻中心的 API
+    const url = "https://news.eastmoney.com/api/info/GetNewsInfoList"
     const params = {
-      sr: "-1",
-      page_size: "30",
-      page_index: "1",
-      ann_type: "A",
-      client_source: "web",
-      f_node: "0",
-      s_node: "0"
+      newsid: "0,90,93",
+      code: "",
+      t: String(Date.now())
     }
 
     const queryString = Object.entries(params)
@@ -19,22 +15,36 @@ const quick = defineSource(async () => {
     const apiUrl = `${url}?${queryString}`
     const res = await myFetch(apiUrl)
 
-    if (!res?.data?.list || res.data.list.length === 0) {
-      return []
+    let list = null
+    if (res?.newslist) {
+      list = res.newslist
+    } else if (res?.list) {
+      list = res.list
+    } else if (res?.data) {
+      list = res.data
+    } else if (Array.isArray(res)) {
+      list = res
     }
 
-    return res.data.list.map((item: any) => {
-      return {
-        id: item.art_code || item.id,
-        title: item.title,
-        url: item.art_url || `https://www.eastmoney.com/a/${item.art_code}.html`,
-        extra: {
-          date: item.publish_time ? parseRelativeDate(item.publish_time, "Asia/Shanghai").valueOf() : Date.now(),
-          hover: item.digest || item.summary || "",
-          info: item.market_short_name || item.source || "东方财富",
-        },
-      }
-    })
+    if (list && list.length > 0) {
+      return list.map((item: any, index: number) => {
+        return {
+          id: item.newsid || item.id || `eastmoney-${Date.now()}-${index}`,
+          title: item.title || item.news_title || "财经快讯",
+          url: item.url || item.link || item.news_url || `https://news.eastmoney.com/a/${item.newsid || item.id || ''}.html`,
+          extra: {
+            date: item.date_time || item.time || item.createtime
+              ? parseRelativeDate(item.date_time || item.time || item.createtime, "Asia/Shanghai").valueOf()
+              : Date.now(),
+            hover: item.digest || item.summary || item.content || item.description || "",
+            info: item.source || item.market_short_name || "东方财富",
+          },
+        }
+      })
+    }
+
+    console.log("东方财富 API 返回空数据")
+    return []
   } catch (error) {
     console.error("东方财富获取失败:", error)
     return []
