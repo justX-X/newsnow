@@ -365,7 +365,6 @@ export const originSources = {
     color: "green",
     column: "finance",
     home: "https://kuaixun.eastmoney.com/",
-    disable: true,
     sub: {
       quick: {
         type: "realtime",
