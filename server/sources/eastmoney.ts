@@ -11,7 +11,7 @@ const quick = defineSource(async () => {
       return []
     }
 
-    const data = response?.data?.list || response?.list || []
+    const data = response?.data?.fastNewsList || []
 
     if (!data.length) {
       console.log("东方财富未找到新闻")
@@ -21,14 +21,14 @@ const quick = defineSource(async () => {
     console.log(`东方财富快讯找到 ${data.length} 条新闻`)
 
     return data.map((item: any, index: number) => ({
-      id: `eastmoney-${item.id || Date.now()}-${index}`,
-      title: item.title || item.content || "",
-      url: item.link || item.url || `https://kuaixun.eastmoney.com/`,
+      id: `eastmoney-${item.code || Date.now()}-${index}`,
+      title: item.title || item.summary || "",
+      url: `https://kuaixun.eastmoney.com/`,
       extra: {
-        date: item.showTime || item.time || item.ctime
-          ? new Date(item.showTime || item.time || item.ctime).valueOf()
+        date: item.showTime
+          ? new Date(item.showTime).valueOf()
           : Date.now() - (index * 60000),
-        hover: item.title || item.content || "",
+        hover: item.summary || item.title || "",
         info: "东方财富",
       },
     }))
