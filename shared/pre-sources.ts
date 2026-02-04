@@ -137,6 +137,10 @@ export const originSources = {
         interval: Time.Fast,
         title: "快讯",
       },
+      focus: {
+        title: "焦点",
+        interval: Time.Common,
+      },
     },
   },
 } as const satisfies Record<string, OriginSource>
