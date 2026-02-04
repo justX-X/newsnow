@@ -23,7 +23,8 @@ const quick = defineSource(async () => {
     return data.map((item: any, index: number) => ({
       id: `eastmoney-${item.code || Date.now()}-${index}`,
       title: item.title || item.summary || "",
-      url: `https://kuaixun.eastmoney.com/`,
+      // 使用 code 构造详情页 URL，格式参考东方财富网站的详情页
+      url: `https://emdata.eastmoney.com/news/detail/${item.code}`,
       extra: {
         date: item.showTime
           ? new Date(item.showTime).valueOf()
