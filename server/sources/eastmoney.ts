@@ -2,7 +2,6 @@ import * as cheerio from "cheerio"
 
 const quick = defineSource(async () => {
   try {
-    // 直接访问滚动新闻页面
     const url = "https://roll.eastmoney.com/finance_122.html"
     const html = await myFetch(url, { responseType: "text" })
 
@@ -14,41 +13,33 @@ const quick = defineSource(async () => {
     const $ = cheerio.load(html)
     const items: any[] = []
 
-    // 查找新闻列表项 - 东方财富常见的类名
-    const selectors = [
-      '.list-item',
-      '.news-list li',
-      'li',
-      'article'
-    ]
+    // 查找新闻列表项
+    const $listItems = $('ul li')
 
-    for (const selector of selectors) {
-      $(selector).each((_, element) => {
-        const $el = $(element)
+    $listItems.each((_, element) => {
+      const $el = $(element)
 
-        // 查找标题
-        const title = $el.find('a').first().text().trim() || $el.find('h3, h4, .title').first().text().trim()
-        const link = $el.find('a').first().attr('href')
-        const timeText = $el.find('.time, .date, .pub-time').first().text().trim()
+      // 提取时间
+      const timeText = $el.find('.timestamp, .news-date, span').first().text().trim()
 
-        // 过滤有效内容
-        if (title && title.length > 5 && title.length < 200) {
-          items.push({
-            id: `eastmoney-${Date.now()}-${items.length}`,
-            title,
-            url: link ? (link.startsWith('http') ? link : `https:${link}`) : url,
-            timeText
-          })
-        }
-      })
+      // 提取分类标签和标题链接
+      const $titleLink = $el.find('a').first()
+      const title = $titleLink.text().trim().replace(/^\[.*?\]\s*/, '') // 移除分类标签
+      const link = $titleLink.attr('href')
 
-      if (items.length > 0) {
-        console.log(`找到 ${items.length} 条新闻`)
-        break
+      // 过滤有效内容 - 排除导航链接、分页等
+      if (title && title.length > 5 && title.length < 200 && link) {
+        items.push({
+          id: `eastmoney-${Date.now()}-${items.length}`,
+          title,
+          url: link.startsWith('http') ? link : `https:${link}`,
+          timeText
+        })
       }
-    }
+    })
 
     if (items.length > 0) {
+      console.log(`东方财富找到 ${items.length} 条新闻`)
       return items.map((item, index) => ({
         id: item.id,
         title: item.title,
@@ -63,7 +54,7 @@ const quick = defineSource(async () => {
       }))
     }
 
-    // 如果抓取失败，返回空数组
+    console.log("东方财富未找到有效新闻")
     return []
   } catch (error) {
     console.error("东方财富获取失败:", error)
