@@ -120,7 +120,6 @@ const ventureBeat = defineSource(async () => {
 
 export default defineSource({
   "techcrunch": techCrunch,
-  "theverge": theVerge,
   "arstechnica": arsTechnica,
   "wired": wired,
   "venturebeat": ventureBeat,
