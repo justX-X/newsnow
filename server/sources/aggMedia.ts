@@ -58,26 +58,6 @@ const benzinga = defineSource(async () => {
     }))
 })
 
-const reutersBusiness = defineSource(async () => {
-  const rssUrl = "https://www.reuters.com/rssFeed/businessNews"
-  const res: RSS2JSONResponse = await myFetch(
-    `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`
-  )
-
-  return res.items
-    .slice(0, 30)
-    .map((item, index) => ({
-      id: `reuters-${item.guid || index}`,
-      title: item.title,
-      url: item.link,
-      extra: {
-        date: new Date(item.pubDate).getTime(),
-        info: "Reuters",
-        hover: item.description?.replace(/<[^>]*>/g, "") || item.title,
-      },
-    }))
-})
-
 const techmeme = defineSource(async () => {
   const rssUrl = "https://techmeme.com/feed.xml"
   const res: RSS2JSONResponse = await myFetch(
@@ -101,6 +81,5 @@ const techmeme = defineSource(async () => {
 export default defineSource({
   "seeking-alpha": seekingAlpha,
   "benzinga": benzinga,
-  "reuters-business": reutersBusiness,
   "techmeme": techmeme,
 })

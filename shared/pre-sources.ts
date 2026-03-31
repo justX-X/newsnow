@@ -179,14 +179,6 @@ export const originSources = {
     interval: Time.Fast,
     title: "半导体",
   },
-  "wired": {
-    name: "Wired",
-    color: "rose",
-    column: "tech",
-    home: "https://www.wired.com",
-    interval: Time.Fast,
-    title: "科技前沿",
-  },
   "venturebeat": {
     name: "VentureBeat",
     color: "indigo",
@@ -220,13 +212,13 @@ export const originSources = {
     interval: Time.Realtime,
     title: "美股快讯",
   },
-  "reuters-business": {
-    name: "Reuters Business",
-    color: "emerald",
+  "bloomberg": {
+    name: "Bloomberg",
+    color: "orange",
     column: "finance",
-    home: "https://www.reuters.com",
+    home: "https://www.bloomberg.com",
     interval: Time.Fast,
-    title: "全球财经",
+    title: "财经综合",
   },
   "techmeme": {
     name: "Techmeme",
