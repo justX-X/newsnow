@@ -220,6 +220,14 @@ export const originSources = {
     interval: Time.Fast,
     title: "财经综合",
   },
+  "reuters": {
+    name: "Reuters",
+    color: "emerald",
+    column: "finance",
+    home: "https://www.reuters.com",
+    interval: Time.Fast,
+    title: "综合",
+  },
   "techmeme": {
     name: "Techmeme",
     color: "blue",

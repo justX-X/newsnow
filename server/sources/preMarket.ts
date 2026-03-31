@@ -58,6 +58,26 @@ const bloomberg = defineSource(async () => {
     }))
 })
 
+const reuters = defineSource(async () => {
+  const rssUrl = "https://reutersbest.com/feed/"
+  const res: RSS2JSONResponse = await myFetch(
+    `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`
+  )
+
+  return res.items
+    .slice(0, 30)
+    .map((item, index) => ({
+      id: `reuters-${item.guid || index}`,
+      title: item.title,
+      url: item.link,
+      extra: {
+        date: new Date(item.pubDate).getTime(),
+        info: "Reuters Best",
+        hover: item.description?.replace(/<[^>]*>/g, "") || item.title,
+      },
+    }))
+})
+
 const marketWatch = defineSource(async () => {
   const rssUrl = "https://feeds.content.dowjones.io/public/rss/mw_topstories"
   const res: RSS2JSONResponse = await myFetch(
@@ -121,6 +141,7 @@ const yahooAfterHours = defineSource(async () => {
 export default defineSource({
   "bloomberg": bloomberg,
   "bloomberg-markets": bloombergMarkets,
+  "reuters": reuters,
   "marketwatch": marketWatch,
   "yahoo-finance-premarket": yahooPreMarket,
   "yahoo-finance-afterhours": yahooAfterHours,
