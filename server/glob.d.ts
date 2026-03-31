@@ -47,7 +47,7 @@ declare module 'glob:./sources/{*.ts,**/index.ts}' {
   export const zaobao: typeof import('./sources/zaobao')
   export const zhihu: typeof import('./sources/zhihu')
   export const eastmoney: typeof import('./sources/eastmoney')
-  export const hackernews: typeof import('./sources/hackernews-api')
+  export const hackernews: typeof import('./sources/hackernewsApi')
   export const spaceflight: typeof import('./sources/spaceflight')
   export const cnbc: typeof import('./sources/usMedia')
   export const yahoo_finance: typeof import('./sources/usMedia')
