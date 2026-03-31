@@ -52,7 +52,6 @@ declare module 'glob:./sources/{*.ts,**/index.ts}' {
   export const cnbc: typeof import('./sources/usMedia')
   export const yahoo_finance: typeof import('./sources/usMedia')
   export const google_tech: typeof import('./sources/usMedia')
-  export const google_business: typeof import('./sources/usMedia')
   export const techcrunch: typeof import('./sources/techMedia')
   export const theverge: typeof import('./sources/techMedia')
   export const arstechnica: typeof import('./sources/techMedia')

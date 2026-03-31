@@ -206,14 +206,6 @@ export const originSources = {
     interval: Time.Fast,
     title: "科技",
   },
-  "google-business": {
-    name: "Google News Business",
-    color: "emerald",
-    column: "finance",
-    home: "https://news.google.com",
-    interval: Time.Fast,
-    title: "商业",
-  },
   "techcrunch": {
     name: "TechCrunch",
     color: "emerald",

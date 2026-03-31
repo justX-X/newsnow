@@ -252,14 +252,6 @@
     "interval": 300000,
     "title": "NASA"
   },
-  "spaceflight-artemis": {
-    "name": "Spaceflight News",
-    "column": "tech",
-    "home": "https://www.spaceflightnewsapi.net",
-    "color": "slate",
-    "interval": 1800000,
-    "title": "Artemis登月"
-  },
   "cnbc": {
     "name": "CNBC",
     "column": "finance",
