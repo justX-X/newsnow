@@ -58,50 +58,9 @@ const yahooFinance = defineSource(async () => {
     }))
 })
 
-const googleTech = defineSource(async () => {
-  const rssUrl = "https://news.google.com/rss/search?q=technology&hl=en-US&gl=US&ceid=US:en"
-  const res: RSS2JSONResponse = await myFetch(
-    `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`
-  )
-
-  return res.items
-    .slice(0, 20)
-    .map((item, index) => ({
-      id: `google-tech-${item.guid || index}`,
-      title: item.title,
-      url: item.link,
-      extra: {
-        date: new Date(item.pubDate).getTime(),
-        info: "Google News Tech",
-        hover: item.description?.replace(/<[^>]*>/g, "") || item.title,
-      },
-    }))
-})
-
-const googleBusiness = defineSource(async () => {
-  const rssUrl = "https://news.google.com/rss/search?q=business&hl=en-US&gl=US&ceid=US:en"
-  const res: RSS2JSONResponse = await myFetch(
-    `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`
-  )
-
-  return res.items
-    .slice(0, 20)
-    .map((item, index) => ({
-      id: `google-business-${item.guid || index}`,
-      title: item.title,
-      url: item.link,
-      extra: {
-        date: new Date(item.pubDate).getTime(),
-        info: "Google News Business",
-        hover: item.description?.replace(/<[^>]*>/g, "") || item.title,
-      },
-    }))
-})
 
 export default defineSource({
   "cnbc": cnbc,
   "cnbc-finance": cnbc,
   "yahoo-finance": yahooFinance,
-  "google-tech": googleTech,
-  "google-business": googleBusiness,
 })

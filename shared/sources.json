@@ -276,22 +276,6 @@
     "interval": 300000,
     "title": "美股"
   },
-  "google-tech": {
-    "name": "Google News Tech",
-    "column": "tech",
-    "home": "https://news.google.com",
-    "color": "blue",
-    "interval": 300000,
-    "title": "科技"
-  },
-  "google-business": {
-    "name": "Google News Business",
-    "column": "finance",
-    "home": "https://news.google.com",
-    "color": "emerald",
-    "interval": 300000,
-    "title": "商业"
-  },
   "techcrunch": {
     "name": "TechCrunch",
     "column": "tech",
@@ -300,14 +284,6 @@
     "interval": 300000,
     "title": "科技"
   },
-  "theverge": {
-    "name": "The Verge",
-    "column": "tech",
-    "home": "https://www.theverge.com",
-    "color": "blue",
-    "interval": 300000,
-    "title": "前沿科技"
-  },
   "arstechnica": {
     "name": "Ars Technica",
     "column": "tech",
@@ -315,14 +291,6 @@
     "color": "orange",
     "interval": 300000,
     "title": "半导体"
-  },
-  "wired": {
-    "name": "Wired",
-    "column": "tech",
-    "home": "https://www.wired.com",
-    "color": "rose",
-    "interval": 300000,
-    "title": "科技前沿"
   },
   "venturebeat": {
     "name": "VentureBeat",

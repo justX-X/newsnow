@@ -190,22 +190,6 @@ export const originSources = {
     interval: Time.Fast,
     title: "财经",
   },
-  "yahoo-finance": {
-    name: "Yahoo Finance",
-    color: "purple",
-    column: "finance",
-    home: "https://finance.yahoo.com",
-    interval: Time.Fast,
-    title: "美股",
-  },
-  "google-tech": {
-    name: "Google News Tech",
-    color: "blue",
-    column: "tech",
-    home: "https://news.google.com",
-    interval: Time.Fast,
-    title: "科技",
-  },
   "techcrunch": {
     name: "TechCrunch",
     color: "emerald",
@@ -213,14 +197,6 @@ export const originSources = {
     home: "https://techcrunch.com",
     interval: Time.Fast,
     title: "科技",
-  },
-  "theverge": {
-    name: "The Verge",
-    color: "blue",
-    column: "tech",
-    home: "https://www.theverge.com",
-    interval: Time.Fast,
-    title: "前沿科技",
   },
   "arstechnica": {
     name: "Ars Technica",
