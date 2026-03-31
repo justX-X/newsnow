@@ -190,5 +190,173 @@
     "color": "green",
     "interval": 300000,
     "title": "快讯"
+  },
+  "hackernews": {
+    "redirect": "hackernews-hot",
+    "name": "Hacker News",
+    "type": "realtime",
+    "column": "tech",
+    "home": "https://news.ycombinator.com",
+    "color": "orange",
+    "interval": 300000,
+    "title": "热门"
+  },
+  "hackernews-hot": {
+    "name": "Hacker News",
+    "type": "realtime",
+    "column": "tech",
+    "home": "https://news.ycombinator.com",
+    "color": "orange",
+    "interval": 300000,
+    "title": "热门"
+  },
+  "hackernews-new": {
+    "name": "Hacker News",
+    "type": "realtime",
+    "column": "tech",
+    "home": "https://news.ycombinator.com",
+    "color": "orange",
+    "interval": 300000,
+    "title": "最新"
+  },
+  "spaceflight": {
+    "redirect": "spaceflight-general",
+    "name": "Spaceflight News",
+    "column": "tech",
+    "home": "https://www.spaceflightnewsapi.net",
+    "color": "slate",
+    "interval": 1800000,
+    "title": "综合"
+  },
+  "spaceflight-general": {
+    "name": "Spaceflight News",
+    "column": "tech",
+    "home": "https://www.spaceflightnewsapi.net",
+    "color": "slate",
+    "interval": 1800000,
+    "title": "综合"
+  },
+  "spaceflight-spacex": {
+    "name": "Spaceflight News",
+    "column": "tech",
+    "home": "https://www.spaceflightnewsapi.net",
+    "color": "slate",
+    "interval": 300000,
+    "title": "SpaceX"
+  },
+  "spaceflight-nasa": {
+    "name": "Spaceflight News",
+    "column": "tech",
+    "home": "https://www.spaceflightnewsapi.net",
+    "color": "slate",
+    "interval": 300000,
+    "title": "NASA"
+  },
+  "spaceflight-artemis": {
+    "name": "Spaceflight News",
+    "column": "tech",
+    "home": "https://www.spaceflightnewsapi.net",
+    "color": "slate",
+    "interval": 1800000,
+    "title": "Artemis登月"
+  },
+  "cnbc": {
+    "name": "CNBC",
+    "column": "finance",
+    "home": "https://www.cnbc.com",
+    "color": "sky",
+    "interval": 300000,
+    "title": "财经"
+  },
+  "cnbc-finance": {
+    "name": "CNBC",
+    "column": "finance",
+    "home": "https://www.cnbc.com",
+    "color": "sky",
+    "interval": 300000,
+    "title": "财经"
+  },
+  "yahoo-finance": {
+    "name": "Yahoo Finance",
+    "column": "finance",
+    "home": "https://finance.yahoo.com",
+    "color": "purple",
+    "interval": 300000,
+    "title": "美股"
+  },
+  "google-tech": {
+    "name": "Google News Tech",
+    "column": "tech",
+    "home": "https://news.google.com",
+    "color": "blue",
+    "interval": 300000,
+    "title": "科技"
+  },
+  "google-business": {
+    "name": "Google News Business",
+    "column": "finance",
+    "home": "https://news.google.com",
+    "color": "emerald",
+    "interval": 300000,
+    "title": "商业"
+  },
+  "techcrunch": {
+    "name": "TechCrunch",
+    "column": "tech",
+    "home": "https://techcrunch.com",
+    "color": "emerald",
+    "interval": 300000,
+    "title": "科技"
+  },
+  "theverge": {
+    "name": "The Verge",
+    "column": "tech",
+    "home": "https://www.theverge.com",
+    "color": "blue",
+    "interval": 300000,
+    "title": "前沿科技"
+  },
+  "arstechnica": {
+    "name": "Ars Technica",
+    "column": "tech",
+    "home": "https://arstechnica.com",
+    "color": "orange",
+    "interval": 300000,
+    "title": "半导体"
+  },
+  "wired": {
+    "name": "Wired",
+    "column": "tech",
+    "home": "https://www.wired.com",
+    "color": "rose",
+    "interval": 300000,
+    "title": "科技前沿"
+  },
+  "venturebeat": {
+    "name": "VentureBeat",
+    "column": "tech",
+    "home": "https://venturebeat.com",
+    "color": "indigo",
+    "interval": 300000,
+    "title": "创投科技"
+  },
+  "blockbeats": {
+    "redirect": "blockbeats-flash",
+    "name": "律动BlockBeats",
+    "type": "realtime",
+    "column": "crypto",
+    "home": "https://www.theblockbeats.info",
+    "color": "purple",
+    "interval": 300000,
+    "title": "快讯"
+  },
+  "blockbeats-flash": {
+    "name": "律动BlockBeats",
+    "type": "realtime",
+    "column": "crypto",
+    "home": "https://www.theblockbeats.info",
+    "color": "purple",
+    "interval": 300000,
+    "title": "快讯"
   }
 }
