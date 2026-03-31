@@ -28,5 +28,9 @@
   "arstechnica": "ArsTechnica-bandaoti",
   "wired": "Wired-kejiqianyan",
   "venturebeat": "VentureBeat-chuangtongkeji",
-  "blockbeats-flash": "lvdongBlockBeats-kuaixun"
+  "blockbeats-flash": "lvdongBlockBeats-kuaixun",
+  "bloomberg-markets": "BloombergMarkets-shichangxinwen",
+  "marketwatch": "MarketWatch-shichangguancha",
+  "yahoo-finance-premarket": "YahooFinance-meigu-panqian",
+  "yahoo-finance-afterhours": "YahooFinance-meigu-panhou"
 }

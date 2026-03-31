@@ -358,5 +358,46 @@
     "color": "purple",
     "interval": 300000,
     "title": "快讯"
+  },
+  "bloomberg-markets": {
+    "name": "Bloomberg Markets",
+    "column": "finance",
+    "home": "https://www.bloomberg.com/markets",
+    "color": "orange",
+    "interval": 300000,
+    "title": "市场新闻"
+  },
+  "marketwatch": {
+    "name": "MarketWatch",
+    "column": "finance",
+    "home": "https://www.marketwatch.com",
+    "color": "sky",
+    "interval": 300000,
+    "title": "市场观察"
+  },
+  "yahoo-finance": {
+    "redirect": "yahoo-finance-premarket",
+    "name": "Yahoo Finance",
+    "column": "finance",
+    "home": "https://finance.yahoo.com",
+    "color": "purple",
+    "interval": 300000,
+    "title": "美股"
+  },
+  "yahoo-finance-premarket": {
+    "name": "Yahoo Finance",
+    "column": "finance",
+    "home": "https://finance.yahoo.com",
+    "color": "purple",
+    "interval": 300000,
+    "title": "盘前"
+  },
+  "yahoo-finance-afterhours": {
+    "name": "Yahoo Finance",
+    "column": "finance",
+    "home": "https://finance.yahoo.com",
+    "color": "purple",
+    "interval": 300000,
+    "title": "盘后"
   }
 }

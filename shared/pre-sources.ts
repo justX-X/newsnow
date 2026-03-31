@@ -263,6 +263,38 @@ export const originSources = {
     interval: Time.Fast,
     title: "快讯",
   },
+  "bloomberg-markets": {
+    name: "Bloomberg Markets",
+    color: "orange",
+    column: "finance",
+    home: "https://www.bloomberg.com/markets",
+    interval: Time.Fast,
+    title: "市场新闻",
+  },
+  "marketwatch": {
+    name: "MarketWatch",
+    color: "sky",
+    column: "finance",
+    home: "https://www.marketwatch.com",
+    interval: Time.Fast,
+    title: "市场观察",
+  },
+  "yahoo-finance": {
+    name: "Yahoo Finance",
+    color: "purple",
+    column: "finance",
+    home: "https://finance.yahoo.com",
+    interval: Time.Fast,
+    title: "美股",
+    sub: {
+      premarket: {
+        title: "盘前",
+      },
+      afterhours: {
+        title: "盘后",
+      },
+    },
+  },
 } as const satisfies Record<string, OriginSource>
 
 export function genSources() {
