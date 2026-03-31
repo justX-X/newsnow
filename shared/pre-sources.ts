@@ -154,9 +154,6 @@ export const originSources = {
       hot: {
         title: "热门",
       },
-      new: {
-        title: "最新",
-      },
     },
   },
   "spaceflight": {
@@ -166,19 +163,9 @@ export const originSources = {
     home: "https://www.spaceflightnewsapi.net",
     interval: Time.Common,
     sub: {
-      general: {
-        title: "综合",
-      },
       spacex: {
         title: "SpaceX",
         interval: Time.Fast,
-      },
-      nasa: {
-        title: "NASA",
-        interval: Time.Fast,
-      },
-      artemis: {
-        title: "Artemis登月",
       },
     },
   },

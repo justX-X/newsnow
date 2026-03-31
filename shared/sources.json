@@ -191,25 +191,8 @@
     "interval": 300000,
     "title": "热门"
   },
-  "hackernews-new": {
-    "name": "Hacker News",
-    "type": "realtime",
-    "column": "tech",
-    "home": "https://news.ycombinator.com",
-    "color": "orange",
-    "interval": 300000,
-    "title": "最新"
-  },
   "spaceflight": {
-    "redirect": "spaceflight-general",
-    "name": "Spaceflight News",
-    "column": "tech",
-    "home": "https://www.spaceflightnewsapi.net",
-    "color": "slate",
-    "interval": 1800000,
-    "title": "综合"
-  },
-  "spaceflight-general": {
+    "redirect": "spaceflight-spacex",
     "name": "Spaceflight News",
     "column": "tech",
     "home": "https://www.spaceflightnewsapi.net",
@@ -248,14 +231,6 @@
     "color": "indigo",
     "interval": 300000,
     "title": "创投科技"
-  },
-  "yahoo-finance": {
-    "name": "Yahoo Finance",
-    "column": "finance",
-    "home": "https://finance.yahoo.com",
-    "color": "purple",
-    "interval": 300000,
-    "title": "美股"
   },
   "blockbeats": {
     "redirect": "blockbeats-flash",
