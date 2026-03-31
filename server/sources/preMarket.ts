@@ -101,6 +101,6 @@ const yahooAfterHours = defineSource(async () => {
 export default defineSource({
   "bloomberg-markets": bloombergMarkets,
   "marketwatch": marketWatch,
-  "yahoo-premarket": yahooPreMarket,
-  "yahoo-afterhours": yahooAfterHours,
+  "yahoo-finance-premarket": yahooPreMarket,
+  "yahoo-finance-afterhours": yahooAfterHours,
 })
