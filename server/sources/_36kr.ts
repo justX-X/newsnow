@@ -1,6 +1,7 @@
 import type { NewsItem } from "@shared/types"
 import { load } from "cheerio"
 import dayjs from "dayjs/esm"
+import { parseRelativeDate } from "../utils/date"
 
 const quick = defineSource(async () => {
   const baseURL = "https://www.36kr.com"

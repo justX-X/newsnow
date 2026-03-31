@@ -1,5 +1,6 @@
 import { Buffer } from "node:buffer"
 import iconv from "iconv-lite"
+import { parseRelativeDate } from "../utils/date"
 
 interface TonghuashunItem {
   category: string
@@ -33,11 +34,15 @@ interface TonghuashunRes {
 const quick = defineSource(async () => {
   const url = "http://stock.10jqka.com.cn/thsgd/realtimenews.js"
 
-  const response: ArrayBuffer = await myFetch(url, {
-    responseType: "arrayBuffer",
+  // 使用原生 fetch 获取 ArrayBuffer
+  const response = await fetch(url, {
+    headers: {
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    },
   })
 
-  const rawData = iconv.decode(Buffer.from(response), "gbk")
+  const arrayBuffer = await response.arrayBuffer()
+  const rawData = iconv.decode(Buffer.from(arrayBuffer), "gbk")
 
   const jsonMatch = rawData.match(/var\s+thsRss\s*=\s*(\{[\s\S]*?\});/)
   if (!jsonMatch) {
