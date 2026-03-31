@@ -225,38 +225,6 @@
     "interval": 300000,
     "title": "SpaceX"
   },
-  "cnbc": {
-    "name": "CNBC",
-    "column": "finance",
-    "home": "https://www.cnbc.com",
-    "color": "sky",
-    "interval": 300000,
-    "title": "财经"
-  },
-  "cnbc-finance": {
-    "name": "CNBC",
-    "column": "finance",
-    "home": "https://www.cnbc.com",
-    "color": "sky",
-    "interval": 300000,
-    "title": "财经"
-  },
-  "yahoo-finance": {
-    "name": "Yahoo Finance",
-    "column": "finance",
-    "home": "https://finance.yahoo.com",
-    "color": "purple",
-    "interval": 300000,
-    "title": "美股"
-  },
-  "techcrunch": {
-    "name": "TechCrunch",
-    "column": "tech",
-    "home": "https://techcrunch.com",
-    "color": "emerald",
-    "interval": 300000,
-    "title": "科技"
-  },
   "arstechnica": {
     "name": "Ars Technica",
     "column": "tech",
@@ -281,6 +249,14 @@
     "interval": 300000,
     "title": "创投科技"
   },
+  "yahoo-finance": {
+    "name": "Yahoo Finance",
+    "column": "finance",
+    "home": "https://finance.yahoo.com",
+    "color": "purple",
+    "interval": 300000,
+    "title": "美股"
+  },
   "blockbeats": {
     "redirect": "blockbeats-flash",
     "name": "律动BlockBeats",
@@ -299,38 +275,6 @@
     "color": "purple",
     "interval": 300000,
     "title": "快讯"
-  },
-  "bloomberg-markets": {
-    "name": "Bloomberg Markets",
-    "column": "finance",
-    "home": "https://www.bloomberg.com/markets",
-    "color": "orange",
-    "interval": 300000,
-    "title": "市场新闻"
-  },
-  "marketwatch": {
-    "name": "MarketWatch",
-    "column": "finance",
-    "home": "https://www.marketwatch.com",
-    "color": "sky",
-    "interval": 300000,
-    "title": "市场观察"
-  },
-  "yahoo-finance-premarket": {
-    "name": "Yahoo Finance",
-    "column": "finance",
-    "home": "https://finance.yahoo.com",
-    "color": "purple",
-    "interval": 300000,
-    "title": "盘前"
-  },
-  "yahoo-finance-afterhours": {
-    "name": "Yahoo Finance",
-    "column": "finance",
-    "home": "https://finance.yahoo.com",
-    "color": "purple",
-    "interval": 300000,
-    "title": "盘后"
   },
   "seeking-alpha": {
     "name": "Seeking Alpha",

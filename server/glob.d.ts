@@ -56,10 +56,8 @@ declare module 'glob:./sources/{*.ts,**/index.ts}' {
   export const wired: typeof import('./sources/techMedia')
   export const venturebeat: typeof import('./sources/techMedia')
   export const blockbeats: typeof import('./sources/cryptoMedia')
-  export const bloomberg_markets: typeof import('./sources/preMarket')
-  export const marketwatch: typeof import('./sources/preMarket')
-  export const yahoo_finance_premarket: typeof import('./sources/preMarket')
-  export const yahoo_finance_afterhours: typeof import('./sources/preMarket')
+
+  export const yahoo_finance: typeof import('./sources/usMedia')
   export const seeking_alpha: typeof import('./sources/aggMedia')
   export const benzinga: typeof import('./sources/aggMedia')
   export const reuters_business: typeof import('./sources/aggMedia')

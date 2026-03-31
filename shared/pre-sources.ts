@@ -182,22 +182,8 @@ export const originSources = {
       },
     },
   },
-  "cnbc": {
-    name: "CNBC",
-    color: "sky",
-    column: "finance",
-    home: "https://www.cnbc.com",
-    interval: Time.Fast,
-    title: "财经",
-  },
-  "techcrunch": {
-    name: "TechCrunch",
-    color: "emerald",
-    column: "tech",
-    home: "https://techcrunch.com",
-    interval: Time.Fast,
-    title: "科技",
-  },
+
+
   "arstechnica": {
     name: "Ars Technica",
     color: "orange",
@@ -230,38 +216,6 @@ export const originSources = {
     home: "https://www.theblockbeats.info",
     interval: Time.Fast,
     title: "快讯",
-  },
-  "bloomberg-markets": {
-    name: "Bloomberg Markets",
-    color: "orange",
-    column: "finance",
-    home: "https://www.bloomberg.com/markets",
-    interval: Time.Fast,
-    title: "市场新闻",
-  },
-  "marketwatch": {
-    name: "MarketWatch",
-    color: "sky",
-    column: "finance",
-    home: "https://www.marketwatch.com",
-    interval: Time.Fast,
-    title: "市场观察",
-  },
-  "yahoo-finance": {
-    name: "Yahoo Finance",
-    color: "purple",
-    column: "finance",
-    home: "https://finance.yahoo.com",
-    interval: Time.Fast,
-    title: "美股",
-    sub: {
-      premarket: {
-        title: "盘前",
-      },
-      afterhours: {
-        title: "盘后",
-      },
-    },
   },
   "seeking-alpha": {
     name: "Seeking Alpha",
