@@ -90,6 +90,25 @@
     "interval": 600000,
     "title": "热门"
   },
+  "xueqiu": {
+    "redirect": "xueqiu-hotstock",
+    "name": "雪球",
+    "type": "hottest",
+    "column": "finance",
+    "home": "https://xueqiu.com",
+    "color": "blue",
+    "interval": 120000,
+    "title": "热门股票"
+  },
+  "xueqiu-hotstock": {
+    "name": "雪球",
+    "type": "hottest",
+    "column": "finance",
+    "home": "https://xueqiu.com",
+    "color": "blue",
+    "interval": 120000,
+    "title": "热门股票"
+  },
   "gelonghui": {
     "title": "事件",
     "name": "格隆汇",
@@ -225,6 +244,14 @@
     "interval": 300000,
     "title": "SpaceX"
   },
+  "spaceflight-nasa": {
+    "name": "Spaceflight News",
+    "column": "tech",
+    "home": "https://www.spaceflightnewsapi.net",
+    "color": "slate",
+    "interval": 300000,
+    "title": "NASA"
+  },
   "cnbc": {
     "name": "CNBC",
     "column": "finance",
@@ -264,14 +291,6 @@
     "color": "orange",
     "interval": 300000,
     "title": "半导体"
-  },
-  "wired": {
-    "name": "Wired",
-    "column": "tech",
-    "home": "https://www.wired.com",
-    "color": "rose",
-    "interval": 300000,
-    "title": "科技前沿"
   },
   "venturebeat": {
     "name": "VentureBeat",
@@ -316,6 +335,15 @@
     "interval": 300000,
     "title": "市场观察"
   },
+  "yahoo-finance": {
+    "redirect": "yahoo-finance-premarket",
+    "name": "Yahoo Finance",
+    "column": "finance",
+    "home": "https://finance.yahoo.com",
+    "color": "purple",
+    "interval": 300000,
+    "title": "美股"
+  },
   "yahoo-finance-premarket": {
     "name": "Yahoo Finance",
     "column": "finance",
@@ -331,38 +359,5 @@
     "color": "purple",
     "interval": 300000,
     "title": "盘后"
-  },
-  "seeking-alpha": {
-    "name": "Seeking Alpha",
-    "column": "finance",
-    "home": "https://seekingalpha.com",
-    "color": "orange",
-    "interval": 300000,
-    "title": "美股分析"
-  },
-  "benzinga": {
-    "name": "Benzinga",
-    "type": "realtime",
-    "column": "finance",
-    "home": "https://www.benzinga.com",
-    "color": "sky",
-    "interval": 120000,
-    "title": "美股快讯"
-  },
-  "reuters-business": {
-    "name": "Reuters Business",
-    "column": "finance",
-    "home": "https://www.reuters.com",
-    "color": "emerald",
-    "interval": 300000,
-    "title": "全球财经"
-  },
-  "techmeme": {
-    "name": "Techmeme",
-    "column": "tech",
-    "home": "https://techmeme.com",
-    "color": "blue",
-    "interval": 300000,
-    "title": "科技聚合"
   }
 }

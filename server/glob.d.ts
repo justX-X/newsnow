@@ -60,4 +60,8 @@ declare module 'glob:./sources/{*.ts,**/index.ts}' {
   export const marketwatch: typeof import('./sources/preMarket')
   export const yahoo_finance_premarket: typeof import('./sources/preMarket')
   export const yahoo_finance_afterhours: typeof import('./sources/preMarket')
+  export const seeking_alpha: typeof import('./sources/aggMedia')
+  export const benzinga: typeof import('./sources/aggMedia')
+  export const reuters_business: typeof import('./sources/aggMedia')
+  export const techmeme: typeof import('./sources/aggMedia')
 }

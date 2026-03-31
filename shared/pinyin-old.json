@@ -27,9 +27,5 @@
   "bloomberg-markets": "BloombergMarkets-shichangxinwen",
   "marketwatch": "MarketWatch-shichangguancha",
   "yahoo-finance-premarket": "YahooFinance-meigu-panqian",
-  "yahoo-finance-afterhours": "YahooFinance-meigu-panhou",
-  "seeking-alpha": "SeekingAlpha-meiguafenxi",
-  "benzinga": "Benzinga-meigu-kuaixun",
-  "reuters-business": "Reuters-quanqiucijing",
-  "techmeme": "Techmeme-keijujuhe"
+  "yahoo-finance-afterhours": "YahooFinance-meigu-panhou"
 }

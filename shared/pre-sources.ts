@@ -263,6 +263,38 @@ export const originSources = {
       },
     },
   },
+  "seeking-alpha": {
+    name: "Seeking Alpha",
+    color: "orange",
+    column: "finance",
+    home: "https://seekingalpha.com",
+    interval: Time.Fast,
+    title: "美股分析",
+  },
+  "benzinga": {
+    name: "Benzinga",
+    color: "sky",
+    column: "finance",
+    home: "https://www.benzinga.com",
+    interval: Time.Realtime,
+    title: "美股快讯",
+  },
+  "reuters-business": {
+    name: "Reuters Business",
+    color: "emerald",
+    column: "finance",
+    home: "https://www.reuters.com",
+    interval: Time.Fast,
+    title: "全球财经",
+  },
+  "techmeme": {
+    name: "Techmeme",
+    color: "blue",
+    column: "tech",
+    home: "https://techmeme.com",
+    interval: Time.Fast,
+    title: "科技聚合",
+  },
 } as const satisfies Record<string, OriginSource>
 
 export function genSources() {
