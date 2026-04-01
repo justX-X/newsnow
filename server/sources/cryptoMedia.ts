@@ -1,41 +1,35 @@
-interface RSS2JSONResponse {
-  status: string
-  feed: {
-    title: string
-    description: string
-    url: string
+interface BlockBeatsResponse {
+  status: number
+  message: string
+  data: {
+    page: number
+    data: Array<{
+      id: number
+      title: string
+      content: string
+      pic: string
+      link: string
+      url: string
+      create_time: string
+    }>
   }
-  items: Array<{
-    title: string
-    pubDate: string
-    link: string
-    guid: string
-    author?: string
-    thumbnail?: string
-    description?: string
-    content?: string
-    categories?: string[]
-  }>
 }
 
 const blockbeats = defineSource(async () => {
-  const rssUrl = "https://api.theblockbeats.news/v2/rss/newsflash"
-  const res: RSS2JSONResponse = await myFetch(
-    `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`
+  const res: BlockBeatsResponse = await myFetch(
+    "https://api.theblockbeats.news/v1/open-api/open-flash?page=1&size=30&lang=cn"
   )
 
-  return res.items
-    .slice(0, 30)
-    .map((item, index) => ({
-      id: `blockbeats-${item.guid || index}`,
-      title: item.title,
-      url: item.link,
-      extra: {
-        date: new Date(item.pubDate).getTime(),
-        info: "律动BlockBeats",
-        hover: item.description?.replace(/<[^>]*>/g, "") || item.title,
-      },
-    }))
+  return res.data.data.map((item) => ({
+    id: `blockbeats-${item.id}`,
+    title: item.title,
+    url: item.link || `https://www.theblockbeats.info/flash/${item.id}`,
+    extra: {
+      date: Number(item.create_time) * 1000,
+      info: "律动BlockBeats",
+      hover: item.content || item.title,
+    },
+  }))
 })
 
 export default defineSource({
