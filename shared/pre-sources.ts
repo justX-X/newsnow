@@ -236,6 +236,22 @@ export const originSources = {
     interval: Time.Fast,
     title: "科技聚合",
   },
+  "marketwatch": {
+    name: "MarketWatch",
+    color: "indigo",
+    column: "finance",
+    home: "https://www.marketwatch.com",
+    interval: Time.Fast,
+    title: "财经新闻",
+  },
+  "zerohedge": {
+    name: "ZeroHedge",
+    color: "red",
+    column: "finance",
+    home: "https://www.zerohedge.com",
+    interval: Time.Fast,
+    title: "市场观点",
+  },
 } as const satisfies Record<string, OriginSource>
 
 export function genSources() {

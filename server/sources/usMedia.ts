@@ -58,9 +58,50 @@ const yahooFinance = defineSource(async () => {
     }))
 })
 
+const marketWatch = defineSource(async () => {
+  const rssUrl = "https://feeds.content.dowjones.io/public/rss/mw_topstories"
+  const res: RSS2JSONResponse = await myFetch(
+    `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`
+  )
+
+  return res.items
+    .slice(0, 20)
+    .map((item, index) => ({
+      id: `marketwatch-${item.guid || index}`,
+      title: item.title,
+      url: item.link,
+      extra: {
+        date: new Date(item.pubDate).getTime(),
+        info: "MarketWatch",
+        hover: item.description?.replace(/<[^>]*>/g, "") || item.title,
+      },
+    }))
+})
+
+const zeroHedge = defineSource(async () => {
+  const rssUrl = "https://www.zerohedge.com/rss.xml"
+  const res: RSS2JSONResponse = await myFetch(
+    `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`
+  )
+
+  return res.items
+    .slice(0, 20)
+    .map((item, index) => ({
+      id: `zerohedge-${item.guid || index}`,
+      title: item.title,
+      url: item.link,
+      extra: {
+        date: new Date(item.pubDate).getTime(),
+        info: "ZeroHedge",
+        hover: item.description?.replace(/<[^>]*>/g, "") || item.title,
+      },
+    }))
+})
 
 export default defineSource({
   "cnbc": cnbc,
   "cnbc-finance": cnbc,
   "yahoo-finance": yahooFinance,
+  "marketwatch": marketWatch,
+  "zerohedge": zeroHedge,
 })
